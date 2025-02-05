@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Swiper.js CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+    <!-- Google Fonts (Roboto) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .swiper-container {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* เพิ่มพื้นหลังและกรอบโปร่งแสง */
+        .text-container {
+            background: rgba(255, 255, 255, 0.7); /* พื้นหลังโปร่งแสง */
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .next-button {
+            transition: all 0.3s ease;
+        }
+
+        .next-button:hover {
+            transform: scale(1.05);
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-pink-900 to-pink-700 flex items-center justify-center min-h-screen font-roboto">
+    <div class="text-center text-white px-4">
+        <h1 class="text-4xl font-semibold mb-6">Photo booth</h1>
+
+        <!-- Swiper Container -->
+        <div class="swiper-container swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="image1.jpg" alt="Memory">
+                </div>
+                <div class="swiper-slide">
+                    <img src="image3.jpg" alt="Memory">
+                </div>
+                <div class="swiper-slide">
+                    <img src="image4.jpg" alt="Memory">
+                </div>
+                <div class="swiper-slide">
+                    <img src="image5.jpg" alt="Memory">
+                </div>
+                <div class="swiper-slide">
+                    <img src="image6.jpg" alt="Memory"> 
+                </div>
+                <div class="swiper-slide">
+                    <img src="image7.jpg" alt="Memory">
+                </div>
+            </div>
+            <!-- จุดบอกตำแหน่ง -->
+            <div class="swiper-pagination"></div>
+        </div>
+        
+        <!-- ข้อความ -->
+        <div class="mt-8 text-container">
+            <p id="memoryText" class="text-lg text-gray-900">
+                ขอให้ Valentine มีความสุขมากๆนะแล้วก็คุยกับพี่ไปนานๆด้วยอย่าพึ่งเบื่อกันละมีอะไรก็เล่าให้พี่ฟังได้เสมอเลยพี่พร้อมรับฟังเราทุกเรื่องเลย
+            </p>
+        </div>
+        
+        <!-- Spotify iframe -->
+        <div class="mt-8 flex justify-center">
+            <iframe class="rounded-lg shadow-lg" 
+                src="https://open.spotify.com/embed/track/4jTPIeovVlcLvb7HXO04V5?utm_source=generator" 
+                width="300" height="80" frameborder="0" 
+                allowtransparency="true" allow="encrypted-media">
+            </iframe>
+        </div>
+        
+        <!-- ปุ่ม Next -->
+        <a href="maxpang.html" class="mt-8 inline-block px-8 py-3 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-md next-button">
+            หน้าต่อไป →
+        </a>        
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new Swiper(".swiper", {
+                loop: true,
+                slidesPerView: 1,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+            });
+        });
+    </script>
+</body>
+</html>
