@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* เพิ่มแอนิเมชั่นให้กับข้อความ */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* เพิ่มแอนิเมชั่นที่ทำให้พื้นหลังเคลื่อนไหว */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse-bg {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-pink-500 to-red-500 flex items-center justify-center h-screen">
+
+    <div class="text-center text-white px-4 md:px-0 fade-in">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">Countdown</h1>
+        <p class="text-base md:text-xl text-gray-100 mb-6">อีกไม่กี่เดือนก็จะ 16 แล้วนะ</p>
+        <div id="countdown" class="text-3xl md:text-4xl font-bold bg-white text-purple-900 px-6 py-3 md:px-8 md:py-4 rounded-lg shadow-lg pulse-bg w-3/4 md:w-1/2 mx-auto"></div>
+        <a href="memories.html" class="mt-6 inline-block px-8 py-4 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-600 transition-all duration-300 transform hover:scale-105 w-3/4 md:w-1/2 mx-auto">หน้าต่อไป</a>
+    </div>
+
+    <script>
+        function startCountdown() {
+            const targetDate = new Date("2025-05-04T00:00:00");
+            function updateCountdown() {
+                const now = new Date();
+                const difference = targetDate - now;
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                document.getElementById("countdown").innerText = `${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที`;
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+        startCountdown();
+    </script>
+</body>
+</html>
