@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ห้องแชท</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/chat.css"> <!-- ลิงก์ไฟล์ CSS -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- ใช้ไอคอน -->
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="py-4">
+    <div class="container">
+      <h1 class="text-white">💬 ห้องแชทเกี่ยวกับแมว 🐾</h1>
+      <nav>
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a class="nav-link text-white" href="index.html">หน้าแรก</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="booking.html">จองเวลา</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="shop.html">ร้านค้า</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="donate.html">บริจาค</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ส่วนแชท -->
+  <section class="container py-5">
+    <h2 class="text-center">🐱 คุยเกี่ยวกับแมวที่นี่! 🐾</h2>
+    <div id="chat-box" class="border p-3 mb-3">
+      <!-- ตัวอย่างข้อความ -->
+      <div class="chat-message">สวัสดี! มาคุยเกี่ยวกับแมวกันเถอะ! 😺</div>
+      <div class="chat-message user">ใช่เลย! แมวของฉันชอบเล่นของเล่นมาก! 🧸</div>
+    </div>
+
+    <!-- อินพุตส่งข้อความ -->
+    <div class="d-flex">
+      <input type="text" id="chat-input" class="form-control me-2" placeholder="พิมพ์ข้อความที่นี่...">
+      <button id="send-btn" class="btn btn-primary">
+        ส่ง <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </section>
+
+  <script src="scripts/chat.js"></script> <!-- ลิงก์ไฟล์ JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
